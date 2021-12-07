@@ -1,26 +1,28 @@
 import { Component, EventEmitter,  OnInit, Output } from '@angular/core';
 import { AuthserviceService } from 'src/app/services/UserAuth/authservice.service';
-import { HidebarService } from 'src/app/services/HideBar/hidebar.service';
+import { SidebarService } from 'src/app/services/Sidebar/sidebar.service';
+
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.css'],
-  providers:[HidebarService]
+  // providers:[SidebarService]
 })
 export class TopbarComponent implements OnInit {
 
-
+  isDisplayed:boolean = false;
 
   constructor(public authService: AuthserviceService,
-    private sidebarService: HidebarService) {}
+    private sidebarService: SidebarService) {}
 
 
   ngOnInit(): void {
     
   }
   
-  clickMenu() {
-    this.sidebarService.toggle();
+  togglesideNav() {
+    this.isDisplayed = !this.isDisplayed;
+    this.sidebarService.toggle(this.isDisplayed);
   }
 
 

@@ -45,10 +45,17 @@ export class LoginComponent implements OnInit {
       console.log(this.data);
       // Store Token
       localStorage.setItem('token', res.token)
+     if(this.data){
       this.toastr.success(JSON.stringify(this.data.code), JSON.stringify(this.data.message), {
         timeOut:2000,
         progressBar:true
       });
+     }else{
+       this.toastr.error(JSON.stringify(this.data.code), JSON.stringify(this.data.message),{
+         progressBar: true,
+         timeOut: 3000
+       })
+     }
       this.router.navigate(['/dashboard']);
     })
   }

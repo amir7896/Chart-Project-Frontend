@@ -3,7 +3,7 @@ import { GraphsService } from 'src/app/services/Graphs/graphs.service';
 import * as Chart from 'chart.js';
 import { ChartDataSets, ChartOptions, ChartType , RadialChartOptions} from 'chart.js';
 import { Color, BaseChartDirective, Label ,MultiDataSet, SingleDataSet} from 'ng2-charts';
-import { HidebarService } from 'src/app/services/HideBar/hidebar.service';
+
 @Component({
   selector: 'app-dash-board',
   templateUrl: './dash-board.component.html',

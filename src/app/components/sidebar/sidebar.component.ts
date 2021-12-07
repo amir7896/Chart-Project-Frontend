@@ -1,41 +1,23 @@
 import { AfterViewInit, Component, HostBinding, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
-import { HidebarService } from 'src/app/services/HideBar/hidebar.service';
-
+import { SidebarService } from 'src/app/services/Sidebar/sidebar.service';
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit, OnChanges, AfterViewInit {
+export class SidebarComponent implements OnInit {
  
 
-  open:boolean = true;
-  isLoaded: boolean = false;
+  showSideNav:boolean = true;
 
-  toggleSubscription: Subject<boolean> = this.hidebarService.sideNavToggleSubject;
 
-  constructor(private hidebarService : HidebarService) { }
-  
-  
-  ngOnChanges(changes: SimpleChanges): void {
-   
-  }
- 
- 
-  ngAfterViewInit(): void {
-    
-  }
+
+  constructor(private sidebarService : SidebarService) { }
 
 
   ngOnInit(): void {
-    this.toggleSubscription.subscribe((res: boolean) => {
-      this.open=res;
-    })
-  }
-
-  toggeling(){
-    this.hidebarService.toggle()
+    this.sidebarService.get().subscribe(sideNav => this.showSideNav = sideNav);
   }
 
 }

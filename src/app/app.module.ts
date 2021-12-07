@@ -29,6 +29,8 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { AuthGuard } from './guard/auth.guard';
 import { TokenService } from './services/TokenService/token.service';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+import { ResetComponent } from './components/reset/reset.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
     TutorialsComponent,
     AboutUsComponent,
     DashBoardComponent,
+    PasswordResetComponent,
+    ResetComponent,
 
     
   ],

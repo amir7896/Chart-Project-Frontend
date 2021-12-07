@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HidebarService } from './hidebar.service';
+import { SidebarService } from './sidebar.service';
 
-describe('HidebarService', () => {
-  let service: HidebarService;
+describe('SidebarService', () => {
+  let service: SidebarService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(HidebarService);
+    service = TestBed.inject(SidebarService);
   });
 
   it('should be created', () => {

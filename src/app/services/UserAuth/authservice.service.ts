@@ -30,4 +30,15 @@ export class AuthserviceService {
   getToken(){
     return localStorage.getItem('token');
   }
+  //password forget route
+  resetPassword(data:any){
+    return this._httpClient.post('http://localhost:3000/resetPass/forget',data)
+  }
+  //get token for password reset
+  gettokenForReset(token: any){
+    return this._httpClient.get('http://localhost:3000/resetPass/reset'+token)
+  }
+  changeUserPassword(token: any,data:any){
+    return this._httpClient.post('http://localhost:3000/resetPass/reset/:'+token ,data);
+  }
 }
